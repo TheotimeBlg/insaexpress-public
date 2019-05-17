@@ -17,11 +17,17 @@ import { NbThemeModule, NbLayoutModule, NbCardModule, NbListModule } from '@nebu
 
 
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import { CharteComponent } from './charte/charte.component';
+import { DefisComponent } from './defis/defis.component';
+import { TeamDetailsComponent } from './team-details/team-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewComponent
+    NewComponent,
+    CharteComponent,
+    DefisComponent,
+    TeamDetailsComponent
   ],
   imports: [
     BrowserModule,

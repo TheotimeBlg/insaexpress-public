@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TEAMS } from '../ma_liste_de_teams';
-import { Team, TeamService } from '../team.service';
+import { Team, TeamService } from '../team-service/team.service';
 import * as L from 'leaflet';
+
+
 
 
 @Component({
@@ -26,7 +28,7 @@ export class NewComponent implements OnInit {
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    
+
     this.getTeams();
 
     // Déclaration de la carte avec les coordonnées du centre et le niveau de zoom.
@@ -40,7 +42,7 @@ export class NewComponent implements OnInit {
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png'
   });
   L.marker([50.6311634, 3.0599573], {icon: myIcon}).bindPopup('Je suis un Frugal Marqueur').addTo(mymap).openPopup();
- 
+
 
 
 

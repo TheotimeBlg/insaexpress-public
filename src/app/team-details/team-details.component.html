@@ -1,0 +1,174 @@
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="">INSA EXPRESS</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="#leaderboard">Classement</a></li>
+							<li><a href="#mapfrance">Carte</a></li>
+              <li><a href="defis">Défis</a></li>
+              <li><a href="charte">Charte du participant</a></li>
+						</ul>
+					</nav>
+
+          <nav class="main">
+            <ul>
+              <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+			<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+			<!-- Main -->
+				<div id="main">
+
+					<!-- Post -->
+						<article class="post">
+							<header>
+								<div class="title">
+									<h2 center><a>Equipe {{id}}</a></h2>
+                  <nb-card *ngIf="team" class="team">
+                    <h3> Ils ont gagné points </h3>
+
+
+                    <nb-card-header><h2 class="text-center">
+                      <img [src]="team.picture" class="logo"><br>{{team.name}}<br>
+                      <span class="badge badge-primary">{{team.score}} points</span>
+                      <span class="badge badge-primary">{{team.distance/1000}}km</span>
+                    </h2></nb-card-header>
+
+                    </nb-card>
+                </div>
+
+								<div class="meta">
+									<time class="published" datetime="2015-11-01">November 1, 2015</time>
+								</div>
+							</header>
+
+
+							<p></p>
+
+						</article>
+				</div>
+
+        
+        <section>
+
+        <!-- Mini Post -->
+            <nb-layout class = "layout">
+            <nb-layout-header>
+              <h1 center>Défis accomplis</h1>
+            </nb-layout-header>
+            <nb-layout-column>
+
+                    <div class = "defis">
+                      <nb-list>
+                        <nb-list-item *ngFor="let team of teams">
+                          <div>
+                              {{team.name}}<br><span>a déjà parcouru {{team.distance/1000}}km</span> </div>
+                            <div>{{team.longitude}}pts</div>
+
+
+                    </nb-list-item>
+                      </nb-list>
+                      <div class="row team" *ngFor="let team of teams" (click)="onSelect(team)"
+                      [class.selected]="team === selectedTeam"
+                      (click)="onSelect(team)" >
+
+                      </div>
+                     </div>
+            </nb-layout-column>
+            </nb-layout>
+
+
+
+              <!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
+
+        </section>
+
+      <!--  <div id="details">
+          <a class="btn btn-primary btn-block mb-3" *ngIf="team" routerLink="/">&lt; Retour au classement</a>
+            <nb-card *ngIf="team" class="team">
+              <nb-card-header><h2 class="text-center">
+                <img [src]="team.picture" class="logo"><br>{{team.name}}<br>
+                <span class="badge badge-primary">{{team.score}} points</span>
+                <span class="badge badge-primary">{{team.distance/1000}}km</span>
+              </h2></nb-card-header>
+
+              <nb-card-body>
+                <div class="row">
+                  <div class="achivements col-md-4">
+                    <h3 *ngIf="team_achievements.length > 0">Réussites</h3>
+                    <div class="row team" *ngFor="let ta of team_achievements">
+                      <div class="col-8 col-md-10">{{ta.achievement.name}}</div>
+                      <div class="col-4 col-md-2 text-right">{{ta.achievement.points > 0 ? '+' : ''}}{{ta.achievement.points}}
+                      </div>
+                      <div class="col-12 text-muted">Attribué {{ta.created_at|amTimeAgo}}</div>
+                  </div>
+                  </div>
+                  <div class="col-md-7 offset-md-1">
+                    <div style="height: 75vh;"
+                    leaflet
+                    [leafletOptions]="options"
+                    (leafletMapReady)="onMapReady($event)"></div>
+                  </div>
+                </div>
+              </nb-card-body>
+            </nb-card>
+          </div>
+-->
+
+			<!-- Sidebar -->
+				<section id="sidebar">
+
+					<!-- Footer -->
+						<section id="footer">
+							<ul class="icons">
+								<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+								<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+						</section>
+
+				</section>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+
+</body>

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {TEAMS} from '../ma_liste_de_teams';
+import { environment } from '../../environments/environment';
 
 export class Achievement {
   id: number;
@@ -24,7 +26,6 @@ export class TeamAchievement {
   created_at: string;
   achievement: Achievement;
   team_id: number;
-  picture: string;
 }
 
 @Injectable(
@@ -36,7 +37,8 @@ export class TeamService {
 
   getTeams(): Observable<Team[]> {
     return new Observable((obs) => {
-      const refresh = () => this.http.get<Team[]>('http://localhost:8000' + '/teams/').subscribe((teams) => {
+      const refresh = () => this.http.get<Team[]>(environment.INSAExpressApi + '/teams/').subscribe((teams) => {
+      //const refresh = () => this.http.get<Team[]>('http://localhost:8000' + '/teams/').subscribe((teams) => {
         obs.next(teams);
         if (!obs.closed) {
           setTimeout(refresh, 30000);
@@ -52,7 +54,8 @@ export class TeamService {
   }
 
   getTeam(id: string): Observable<Team> {
-    return this.http.get<Team>('http://localhost:8000' + '/teams/' + id + '/');
+    //return this.http.get<Team>('http://localhost:8000' + '/teams/' + id + '/');
+    return this.http.get<Team>(environment.INSAExpressApi + '/teams/' + id + '/');
   }
 
 }

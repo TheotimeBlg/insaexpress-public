@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TEAMS } from '../ma_liste_de_teams';
-import { Team, TeamService } from '../team.service';
+import { Team, TeamService } from '../team-service/team.service';
 import * as L from 'leaflet';
 
 @Component({
@@ -23,7 +23,7 @@ export class NewComponent implements OnInit {
 
     // Déclaration de la carte avec les coordonnées du centre et le niveau de zoom.
     const mymap = L.map('mapfrance').setView([45.750000, 4.850000], 13);
-   
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'France Map'
     }).addTo(mymap);

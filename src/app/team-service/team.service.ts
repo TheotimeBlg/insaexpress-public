@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {TEAMS} from '../ma_liste_de_teams';
+//import {TEAMS} from '../ma_liste_de_teams';
 import { environment } from '../../environments/environment';
 
 export class Achievement {

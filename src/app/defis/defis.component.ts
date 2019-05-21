@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, RouterState} from '@angular/router';
 import {Team, Achievement, TeamService} from '../team-service/team.service';
 import {TEAMS} from '../ma_liste_de_teams'
+import { AchievementsService } from '../team-service/achievements.service';
 
 @Component({
   selector: 'app-defis',
@@ -14,11 +15,12 @@ export class DefisComponent implements OnInit {
   achievements: Achievement[];
   selectedTeam : Team;
 
-  constructor(private teamsService: TeamService,) { }
+  constructor(private teamsService: TeamService,
+              private achievementsService: AchievementsService) { }
 
   ngOnInit() {
     this.getTeams();
-    //this.getAchievements();
+    this.getAchievements();
   }
 
 
@@ -33,10 +35,10 @@ getTeams(): void {
     });
 }
 
-/* getAchievements(): void {
+getAchievements(): void {
   this.achievementsService.getAchievements().subscribe((achievements) => {
     this.achievements = achievements;
   });
-} */
+}
 
 }

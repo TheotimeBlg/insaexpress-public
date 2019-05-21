@@ -21,13 +21,14 @@ import { CharteComponent } from './charte/charte.component';
 import { DefisComponent } from './defis/defis.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NewComponent,
     CharteComponent,
     DefisComponent,
-    TeamDetailsComponent
+    TeamDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,4 +48,3 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

@@ -8,7 +8,7 @@
     max-height: 66.5vh;
     overflow-y: scroll;
     overflow-x: hidden;
-  
+
   .team{
     > div {
       padding: 1.2em;
@@ -29,6 +29,3 @@
 .layout {
      color-bg: #4ca6ff
    }
- 
-
-

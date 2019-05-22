@@ -34,15 +34,10 @@
 					<time class="published" datetime="2015-11-01">November 1, 2015</time>
 				</div>
 			</header>
+		<p *ngFor="let achievement of achievements" class="button large fit" >{{achievement.name}}</p>
 
-			<div *ngFor="let team of teams">
-				<article>
-				<h2><a href="#">{{team.name}}</a></h2>
 
-				<br>
-				</article>
 
-			</div>
 		</article>
 	</div>
 
@@ -50,15 +45,8 @@
 
 		<section id="intro">
 			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
-			<header>
-
-			</header>
 		</section>
 
-		<section>
-			<p *ngFor="let achievement of achievements" class="button large fit" >{{achievement.name}}</p>
-
-		</section>
 
 
 

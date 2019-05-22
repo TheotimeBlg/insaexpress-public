@@ -1,9 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterState} from '@angular/router';
-import {Team, TeamAchievement, TeamService} from '../team-service/team.service';
+import {Team,Achievement, TeamAchievement, TeamService} from '../team-service/team.service';
 import {latLng, latLngBounds, tileLayer} from 'leaflet';
 import * as leaflet from 'leaflet';
 import {TEAMS} from '../ma_liste_de_teams';
+import { AchievementsService } from '../team-service/achievements.service';
+import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-team-details',
@@ -13,6 +18,7 @@ import {TEAMS} from '../ma_liste_de_teams';
 export class TeamDetailsComponent implements OnInit {
   team: Team;
   team_achievements: TeamAchievement[];
+  achievements: Achievement[];
   marker: leaflet.Marker;
   private map: leaflet.Map;
   options = {
@@ -21,10 +27,13 @@ export class TeamDetailsComponent implements OnInit {
   };
 
   constructor(private routerParams: ActivatedRoute,
-              private teamsService: TeamService) {
-  }
+              private teamsService: TeamService,
+              private achievementsService: AchievementsService,
+              private http: HttpClient) {}
 
   ngOnInit() {
+    //this.getTeam(id);
+  //  this.getAchievements();
     this.routerParams.params.subscribe(
       (params) => {
         this.teamsService.getTeam(params['id']).subscribe(
@@ -35,17 +44,23 @@ export class TeamDetailsComponent implements OnInit {
               if (this.marker) {
                 this.marker.remove();
               }
-              const marker = this.marker = this.generateMarker(this.team);
-              marker.addTo(this.map);
-              this.refreshMapBounds(this.team, this.map);
+            //  const marker = this.marker = this.generateMarker(this.team);
+            //  marker.addTo(this.map);
+            //  this.refreshMapBounds(this.team, this.map);
             }
           }
         );
       }
     );
   }
+  /*getAchievements(): void {
+    this.achievementsService.getAchievements().subscribe((achievements) => {
+      this.achievements = achievements;
+    });
+  }
 
-  onMapReady(map: any) {
+
+/*  onMapReady(map: any) {
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -84,6 +99,6 @@ export class TeamDetailsComponent implements OnInit {
     marker.setLatLng(latLng(team.latitude, team.longitude));
     marker.bindTooltip(team.name);
     return marker;
-  }
+  } */
 
 }

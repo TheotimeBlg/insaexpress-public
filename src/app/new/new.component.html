@@ -95,11 +95,13 @@
 								      	<div class = "leaderboard">
 													<div id = "leaderboard">
 							      			<div *ngFor="let team of teams">
+
 							      				<img src="{{ team.picture }}" alt="" />
 							      				<section id="sidebar"></section>
 							      				<h4>{{team.name}}</h4>
 							      				a déjà parcouru {{team.distance/1000}}km
 							      				<br>{{team.longitude}}pts<br>
+														<li><a href="team/{{team.id}}">Détails de l'équipe</a></li>
 													</div>
 												</div>
 								      		<!--<nb-list>

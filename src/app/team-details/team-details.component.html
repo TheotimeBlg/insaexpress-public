@@ -1,125 +1,61 @@
 
-<body class="is-preload">
+<div id="wrapper">
+	<div id="main">
 
-	<!-- Wrapper -->
-		<div id="wrapper">
+		<!-- Post -->
+			<article class="post" style="width: 30%; float: right;">
+				<header>
+					<div class="title">
 
-			<!-- Header -->
-				<header id="header">
-					<h1><a href="">INSA EXPRESS</a></h1>
-					<nav class="links">
-						<ul>
-							<li><a href="#leaderboard">Classement</a></li>
-							<li><a href="#mapfrance">Carte</a></li>
-              <li><a href="defis">Défis</a></li>
-              <li><a href="charte">Charte du participant</a></li>
-							<li><a href="login">Se connecter</a><li>
-						</ul>
-					</nav>
+						<h3 style="text-align:center; font-size: 150%;">Equipe {{team.id}} - {{team.name}}</h3>
+						<br>
+						<p><img [src]="team.picture" class="logo" style="text-align:center; width: 50%; height: 50%; margin-right: 20%; margin-left: 15%; margin-bottom: 20%"></p>
+						<br>
+						<input  type="button"
+										style="text-align:center; margin-bottom: 10%; margin-left: 10%;"
+										value="{{team.score}} points"/>
+						<input type="button"
+								style="text-align:center; margin-top: 10%;  margin-left: 10%;"
+								value="{{team.distance/1000}} km"/>
+						<p></p> 
 
-          <nav class="main">
-            <ul>
-              <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+    				</div>
 
+				</header>
 
-			<!-- Main -->
-				<div id="main">
-
-					<!-- Post -->
-						<article class="post">
-							<header>
-								<div class="title">
-
-									<h3 style="text-align:center;">Equipe {{team.id}} - {{team.name}}</h3>
-									<img [src]="team.picture" class="logo">
-									<h3 style="text-align:center;"> {{team.score}} points </h3>
-									<p></p>
-									<div class="wrapper">
-    								<button class="button">Button</button>
-									</div>
-									<!--<div style="text-align: center;">
-
-									</div>
-								<!--	<input  type="button"
-													style="text-align:center"
-													value="{{team.score}} points"
-													class="a"
-
-													disabled="disabled"/>
-									<input type="button"
-													value="{{team.distance/1000}} km"
-													disabled="disabled"/>
-									<p></p>  -->
-
-                </div>
-
-								<div class="meta">
-									<time class="published" datetime="2015-11-01">November 1, 2015</time>
-								</div>
-							</header>
-							<p></p>
-
-						</article>
-				</div>
+			</article>
 
 
-				<section>
+			<section class="post" style="width: 69%; float: left;">
+				<nb-layout class = "layout">
+				<nb-layout-header>
+					<h1 center>Défis accomplis</h1>
+				</nb-layout-header>
+				
+					<nb-layout-column>
+						<div id="accomplis">
+							<div *ngFor="let ta of this.team_achievements ">
+							<section id="sidebar" style="width: 100%;">
+							<img class="img" [src]="ta.photo.file" style="width: 50%; height: 50%;">
+							
+							
+							<h3 ><span>{{ta.achievement.name}}</span>
+								{{ta.achievement.points > 0 ? '+' : ''}}{{ta.achievement.points}}pts
+								<span class="image right"></span>
+							</h3>
+							<p style="padding-bottom: 70%">Attribué {{ta.created_at}}</p>
+							</section>						
+							</div>
 
-				<!-- Mini Post -->
-						<nb-layout class = "layout">
-						<nb-layout-header>
-							<h1 center>Défis accomplis</h1>
-						</nb-layout-header>
-						<nb-layout-column>
+						</div>
+					</nb-layout-column>
+				
+				</nb-layout>
+			</section>
 
-										<div class = "accomplis">
-											<div id = "accomplis">
-											<div *ngFor="let ta of this.team_achievements">
-												<section id="sidebar"></section>
-												<img class="img" [src]="ta.photo" float="left" style="width: 10%; height: 10%;">
-												<h3><span>{{ta.achievement.name}}</span>
-													{{ta.achievement.points > 0 ? '+' : ''}}{{ta.achievement.points}}pts</h3>
-												<h4 right>Attribué {{ta.created_at}}</h4>
-
-
-											</div>
-										</div>
-										</div>
-						</nb-layout-column>
-						</nb-layout>
-				</section>
+	</div>
 
 
 
-			<!-- Sidebar -->
-				<section id="sidebar">
+</div>
 
-					<!-- Footer -->
-						<section id="footer">
-							<ul class="icons">
-								<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-								<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-						</section>
-
-				</section>
-
-		</div>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-
-</body>

@@ -46,23 +46,113 @@
 				</article>
 				</div>  
 				</div>
-						
+				<section id="sidebar">
+
+			<!-- Intro -->
+			<section id="intro">
+				<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+
+			<section>
+					<h1 style="font-size: 200%;">Classement</h1>
+					<div class = "leaderboard">
+					<div class="mini-post">
+					<article  *ngFor="let team of teams">
+						<header>
+							<h3>{{team.name}}</h3>
+							<p>a déjà parcouru {{team.distance/1000}}km</p>
+							<p>{{team.score}}pts</p>
+							<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
+						</header>
+
+					</article>
+					</div>
+					</div>
+
+				</section>
 			</section>
-		</section>
 
-		
 
-		<!-- Footer -->
-		<section id="footer">
-				<ul class="icons">
-					<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-					<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-		</section>
+			<!-- Sidebar -->
+	<!--			<section id="sidebar">
 
-	</section>
-</div>
+					<!-- Intro -->
+			<!--			<section id="intro">
+							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+							<header>
+
+							</header>
+						</section>
+
+
+						<section>
+
+						<!-- Mini Post -->
+	<!--							<nb-layout class = "layout">
+								<nb-layout-header>
+									<h1 center>Classement</h1>
+								</nb-layout-header>
+								<nb-layout-column>
+
+								      	<div class = "leaderboard">
+													<div id = "leaderboard">
+							      			<div *ngFor="let team of teams">
+
+							      				<img src="{{ team.picture }}" alt="" />
+							      				<section id="sidebar"></section>
+							      				<h4>{{team.name}}</h4>
+							      				a déjà parcouru {{team.distance/1000}}km
+							      				<br>{{team.longitude}}pts<br>
+														<li><a href="team/{{team.id}}">Détails de l'équipe</a></li>
+													</div>
+												</div>
+								      		<!--<nb-list>
+								      			<nb-list-item *ngFor="let team of teams">
+								      				<div ><img [src]="team.picture.url" class="team-picture"></div>
+								      				<div>
+										              {{team.name}}<br><span>a déjà parcouru {{team.distance/1000}}km</span> </div>
+										            <div>{{team.longitude}}pts</div>
+
+
+												</nb-list-item>
+								      		</nb-list>-->
+								 <!--         <div class="row team" *ngFor="let team of teams" (click)="onSelect(team)"
+											    [class.selected]="team === selectedTeam"
+											    (click)="onSelect(team)" >
+
+								          </div>
+								         </div>
+								</nb-layout-column>
+								</nb-layout>
+
+
+
+									<!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
+
+					<!--	</section>
+
+
+
+					<!-- Footer -->
+						<section id="footer">
+							<ul class="icons">
+								<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+								<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+						</section>
+
+				</section>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+
+</body>

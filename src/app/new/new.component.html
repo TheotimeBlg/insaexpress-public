@@ -70,12 +70,37 @@
 
 
 				</div>
-
-			<!-- Sidebar -->
 				<section id="sidebar">
 
+			<!-- Intro -->
+			<section id="intro">
+				<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+
+			<section>
+					<h1 style="font-size: 200%;">Classement</h1>
+					<div class = "leaderboard">
+					<div class="mini-post">
+					<article  *ngFor="let team of teams">
+						<header>
+							<h3>{{team.name}}</h3>
+							<p>a déjà parcouru {{team.distance/1000}}km</p>
+							<p>{{team.score}}pts</p>
+							<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
+						</header>
+
+					</article>
+					</div>
+					</div>
+
+				</section>
+			</section>
+
+
+			<!-- Sidebar -->
+	<!--			<section id="sidebar">
+
 					<!-- Intro -->
-						<section id="intro">
+			<!--			<section id="intro">
 							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
 							<header>
 
@@ -86,7 +111,7 @@
 						<section>
 
 						<!-- Mini Post -->
-								<nb-layout class = "layout">
+	<!--							<nb-layout class = "layout">
 								<nb-layout-header>
 									<h1 center>Classement</h1>
 								</nb-layout-header>
@@ -114,7 +139,7 @@
 
 												</nb-list-item>
 								      		</nb-list>-->
-								          <div class="row team" *ngFor="let team of teams" (click)="onSelect(team)"
+								 <!--         <div class="row team" *ngFor="let team of teams" (click)="onSelect(team)"
 											    [class.selected]="team === selectedTeam"
 											    (click)="onSelect(team)" >
 
@@ -127,7 +152,7 @@
 
 									<!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
 
-						</section>
+					<!--	</section>
 
 
 

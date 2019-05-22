@@ -34,19 +34,27 @@
 						<article class="post">
 							<header>
 								<div class="title">
-									<h3 style="text-align:center;">Equipe {{team.id}}</h3>
-									<h3 style="text-align:center;"> {{team.name}} </h3>
-									<h3 style="text-align:center;"> {{team.score}} </h3>
-									<input  type="button"
-													style="center;"
+
+									<h3 style="text-align:center;">Equipe {{team.id}} - {{team.name}}</h3>
+									<img [src]="team.picture" class="logo">
+									<h3 style="text-align:center;"> {{team.score}} points </h3>
+									<p></p>
+									<div class="wrapper">
+    								<button class="button">Button</button>
+									</div>
+									<!--<div style="text-align: center;">
+
+									</div>
+								<!--	<input  type="button"
+													style="text-align:center"
 													value="{{team.score}} points"
+													class="a"
+
 													disabled="disabled"/>
 									<input type="button"
-													value="{{team.score}}"
+													value="{{team.distance/1000}} km"
 													disabled="disabled"/>
-									<p></p>
-									<img [src]="team.picture" class="logo"><br>{{team.name}}<br>
-									<p> {{team.id}} </p>
+									<p></p>  -->
 
                 </div>
 
@@ -73,20 +81,19 @@
 											<div id = "accomplis">
 											<div *ngFor="let ta of this.team_achievements">
 												<section id="sidebar"></section>
-												<h4>{{ta.achievement.name}}</h4>
-												<br>{{ta.achievement.points}}pts<br>
+												<img class="img" [src]="ta.photo" float="left" style="width: 10%; height: 10%;">
+												<h3><span>{{ta.achievement.name}}</span>
+													{{ta.achievement.points > 0 ? '+' : ''}}{{ta.achievement.points}}pts</h3>
+												<h4 right>Attribué {{ta.created_at}}</h4>
+
 
 											</div>
 										</div>
 										</div>
 						</nb-layout-column>
 						</nb-layout>
-
-
-
-							<!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
-
 				</section>
+
 
 
 			<!-- Sidebar -->

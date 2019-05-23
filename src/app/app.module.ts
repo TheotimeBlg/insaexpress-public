@@ -20,6 +20,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { CharteComponent } from './charte/charte.component';
 import { DefisComponent } from './defis/defis.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
+import {OrderModule} from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
     CharteComponent,
     DefisComponent,
     TeamDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbCardModule,
-    NbListModule
+    NbListModule,
+    OrderModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

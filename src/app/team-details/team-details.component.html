@@ -34,19 +34,16 @@
 				
 					<nb-layout-column>
 						<div id="accomplis">
-							<div *ngFor="let ta of this.team_achievements ">
-							<section id="sidebar" style="width: 100%;">
-							<img class="img" [src]="ta.photo.file" style="width: 50%; height: 50%;">
-							
-							
-							<h3 ><span>{{ta.achievement.name}}</span>
-								{{ta.achievement.points > 0 ? '+' : ''}}{{ta.achievement.points}}pts
-								<span class="image right"></span>
-							</h3>
-							<p style="padding-bottom: 70%">Attribué {{ta.created_at}}</p>
-							</section>						
+							<div *ngFor="let ta of this.team_achievements">
+									<div *ngIf="ta.validation" id="sidebar" style="width: 100%;">
+										<img class="img" [src]="ta.photo.file" style="width: 50%; height: 50%;">
+										<h3><span>{{ta.achievement.name}}</span>
+											{{ta.achievement.points > 0 ? '+' : ''}}{{ta.achievement.points}}pts
+											<span class="image right"></span>
+										</h3>
+										<p style="padding-bottom: 70%">Attribué {{ta.created_at}}</p>
+									</div>					
 							</div>
-
 						</div>
 					</nb-layout-column>
 				
